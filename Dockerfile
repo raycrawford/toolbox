@@ -1,6 +1,6 @@
 FROM centos:7.6.1810
 
-RUN yum install zsh epel-release git unzip docker -y
+RUN yum install zsh epel-release git unzip docker jq -y
 
 RUN curl -o helm.tar.gz https://storage.googleapis.com/kubernetes-helm/helm-v2.13.1-linux-amd64.tar.gz  && \
   tar xvf ./helm.tar.gz && \
