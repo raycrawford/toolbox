@@ -19,7 +19,7 @@ RUN curl -o terraform.zip https://releases.hashicorp.com/terraform/0.11.13/terra
 
 RUN chsh -s /bin/zsh
 
-RUN git config credential.helper && \
+RUN git config credential.helper store && \
   git config --global user.name "Ray Crawford (Insight)" && \
   git config --global user.email "ray.crawford@insight.com"
 
