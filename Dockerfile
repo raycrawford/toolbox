@@ -21,7 +21,8 @@ RUN chsh -s /bin/zsh
 
 RUN git config credential.helper store && \
   git config --global user.name "Ray Crawford (Insight)" && \
-  git config --global user.email "ray.crawford@insight.com"
+  git config --global user.email "ray.crawford@insight.com" && \
+  git config --global push.default simple
 
 COPY shell/ /root/
 
