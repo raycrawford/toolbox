@@ -21,7 +21,11 @@ RUN curl -o terraform.zip https://releases.hashicorp.com/terraform/0.11.13/terra
 
 RUN chsh -s /bin/zsh
 
-
+RUN cd ~/; mkdir ./.git; touch ./.git/config && \
+  git config credential.helper store && \
+  git config --global user.name "Ray Crawford (Insight)" && \
+  git config --global user.email "ray.crawford@insight.com" && \
+  git config --global push.default simple
 
 COPY shell/ /root/
 
@@ -37,7 +41,3 @@ CMD ["/bin/zsh"]
 #   -v /Users:/Users \
 #   magicmix:latest
 
-# git config credential.helper store && \
-# git config --global user.name "Ray Crawford (Insight)" && \
-# git config --global user.email "ray.crawford@insight.com" && \
-# git config --global push.default simple
